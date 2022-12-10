@@ -40,8 +40,9 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+
+function kopyala(dizi){
+return[...dizi]
 }
 
 
@@ -56,9 +57,13 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(dizi){
+if(dizi.length===25) {return true;
+} else 
+{return false;
 }
+}
+
 
 
 /* Görev 3:
@@ -74,8 +79,9 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(dizi,yeniTad){
+  dizi.unshift(yeniTad);
+  return dizi;
 }
 
 
@@ -91,11 +97,13 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
    Örneğin: sonCesitiKaldir(orijinalTatlar) çalıştırıldığında ["Kakule", "Muz",..."Çilek"] döndürülür.
 */
 
-
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+ 
+function sonCesitiKaldir(dizi){
+dizi.pop();
+return dizi;
 }
-
+console.clear();
+console.log(sonCesitiKaldir(orijinalTatlar))
 
 /* Görev 5:
 Dizideki belirli bir indeksteki çeşniyi döndüren bir işlev yazın.
@@ -108,8 +116,8 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(dizi,index){
+  return dizi[index]
 }
 
 
@@ -128,8 +136,12 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(dizi,lezzet){
+for (let i=0; i<dizi.length;i++) {
+  if (dizi[i]===lezzet)
+{dizi.splice(i,1)}
+}
+return dizi
 }
 
 
@@ -146,7 +158,7 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
    4. Varsa, onları yeni bir diziye ekleyin
    5. Filtrelenmiş tatları içeren yeni diziyi döndürün
 
-  Örneğin: ismeGoreFiltrele(orijinalTatlar, "Çikolata") çalıştırıldığında ["Çikolata", "Fındık Çikolata", "Fıstık Çikolata", "Badem Çikolata"]
+  Örneğin: ismeGoreFiltrele(orijinalTatlar, "Çikolata") çalıştırıldığında [
 
   İPUCU - bunu çözmenize yardımcı olması için .includes yöntemini kullanabilirsiniz.
 
@@ -154,10 +166,16 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(gelenDizi,filtre){
+let a=[]; 
+for (let i=0 ;i<gelenDizi.length; i++){
+  if(gelenDizi[i].includes(filtre)){
+  a.push(gelenDizi[i])
 }
-
+} 
+ return a; 
+  
+} 
 
 
 /* ALIŞTIRMA */
